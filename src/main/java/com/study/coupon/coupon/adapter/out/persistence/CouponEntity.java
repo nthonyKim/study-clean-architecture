@@ -4,8 +4,12 @@ package com.study.coupon.coupon.adapter.out.persistence;
 import com.study.coupon.coupon.CouponStatus;
 import com.study.coupon.coupon.CouponType;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "coupon")
 public class CouponEntity {
     @Id
@@ -15,7 +19,7 @@ public class CouponEntity {
     @Column(unique = true)
     private String code;
 
-    private int point;
+    private Long point;
     @Enumerated(EnumType.STRING)
     private CouponType type;
     @Enumerated(EnumType.STRING)
