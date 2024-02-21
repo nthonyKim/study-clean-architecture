@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController("/api/v1/coupon")
 @RequiredArgsConstructor
-public class CouponController {
+class CouponController {
 
     private final GenerateCouponUseCase generateCoupon;
     private final RegisterCouponUseCase registerCoupon;

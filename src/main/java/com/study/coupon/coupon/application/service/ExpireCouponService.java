@@ -1,8 +1,7 @@
 package com.study.coupon.coupon.application.service;
 
-import com.study.coupon.coupon.CouponStatus;import com.study.coupon.coupon.adapter.out.persistence.CouponEntity;
+import com.study.coupon.coupon.CouponStatus;
 import com.study.coupon.coupon.adapter.out.persistence.CouponRepository;
-import com.study.coupon.coupon.application.CouponConverter;
 import com.study.coupon.coupon.application.port.in.ExpireCouponUseCase;
 
 import com.study.coupon.coupon.domain.Coupon;
@@ -13,7 +12,7 @@ import java.time.Instant;
 
 @Service
 @RequiredArgsConstructor
-public class ExpireCouponService implements ExpireCouponUseCase {
+class ExpireCouponService implements ExpireCouponUseCase {
 
     private final CouponRepository couponRepository;
     private final CouponConverter couponConverter;

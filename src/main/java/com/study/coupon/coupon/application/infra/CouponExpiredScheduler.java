@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class CouponExpiredScheduler {
+class CouponExpiredScheduler {
 
     private final ExpireCouponUseCase expireCoupon;
 
