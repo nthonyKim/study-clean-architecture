@@ -42,4 +42,8 @@ public class Coupon {
         this.usedAt = Instant.now().getEpochSecond();
         // 이벤트 발행
     }
+
+    public void expired() {
+        this.status = CouponStatus.EXPIRED;
+    }
 }

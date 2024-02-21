@@ -1,9 +1,9 @@
 package com.study.coupon.coupon.adapter.in.web;
 
-import com.study.coupon.coupon.port.in.RegisterCouponUseCase;
-import com.study.coupon.coupon.port.in.command.GenerateCouponCommand;
-import com.study.coupon.coupon.port.in.GenerateCouponUseCase;
-import com.study.coupon.coupon.port.in.command.RegisterCouponCommand;
+import com.study.coupon.coupon.application.port.in.RegisterCouponUseCase;
+import com.study.coupon.coupon.application.port.in.command.GenerateCouponCommand;
+import com.study.coupon.coupon.application.port.in.GenerateCouponUseCase;
+import com.study.coupon.coupon.application.port.in.command.RegisterCouponCommand;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

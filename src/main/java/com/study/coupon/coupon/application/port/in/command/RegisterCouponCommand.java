@@ -1,4 +1,4 @@
-package com.study.coupon.coupon.port.in.command;
+package com.study.coupon.coupon.application.port.in.command;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Value;

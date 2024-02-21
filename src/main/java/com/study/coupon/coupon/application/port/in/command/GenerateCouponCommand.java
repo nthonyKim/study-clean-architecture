@@ -1,13 +1,11 @@
-package com.study.coupon.coupon.port.in.command;
+package com.study.coupon.coupon.application.port.in.command;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.study.coupon.coupon.CouponType;
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.Value;
-import org.hibernate.validator.constraints.Range;
 
 import java.util.stream.Stream;
 

@@ -4,8 +4,8 @@ import com.study.coupon.coupon.adapter.out.persistence.CouponEntity;
 import com.study.coupon.coupon.adapter.out.persistence.CouponRepository;
 import com.study.coupon.coupon.application.CouponConverter;
 import com.study.coupon.coupon.domain.Coupon;
-import com.study.coupon.coupon.port.in.RegisterCouponUseCase;
-import com.study.coupon.coupon.port.in.command.RegisterCouponCommand;
+import com.study.coupon.coupon.application.port.in.RegisterCouponUseCase;
+import com.study.coupon.coupon.application.port.in.command.RegisterCouponCommand;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
