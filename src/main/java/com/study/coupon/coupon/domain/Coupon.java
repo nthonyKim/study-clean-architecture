@@ -38,7 +38,7 @@ public class Coupon {
     }
 
     public void registered() {
-        this.status = CouponStatus.PROGRESS;
+        this.status = CouponStatus.USED;
         this.usedAt = Instant.now().getEpochSecond();
         // 이벤트 발행
     }
