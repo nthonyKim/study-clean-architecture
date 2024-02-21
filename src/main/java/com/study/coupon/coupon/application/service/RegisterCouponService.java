@@ -2,7 +2,6 @@ package com.study.coupon.coupon.application.service;
 
 import com.study.coupon.coupon.adapter.out.persistence.CouponEntity;
 import com.study.coupon.coupon.adapter.out.persistence.CouponRepository;
-import com.study.coupon.coupon.application.CouponConverter;
 import com.study.coupon.coupon.domain.Coupon;
 import com.study.coupon.coupon.application.port.in.RegisterCouponUseCase;
 import com.study.coupon.coupon.application.port.in.command.RegisterCouponCommand;
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class RegisterCouponService implements RegisterCouponUseCase {
+class RegisterCouponService implements RegisterCouponUseCase {
 
     private final CouponRepository couponRepository;
     private final CouponConverter couponConverter;

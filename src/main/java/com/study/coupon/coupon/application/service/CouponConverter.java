@@ -1,4 +1,4 @@
-package com.study.coupon.coupon.application;
+package com.study.coupon.coupon.application.service;
 
 import com.study.coupon.common.application.EntityConverter;
 import com.study.coupon.coupon.adapter.out.persistence.CouponEntity;
@@ -6,7 +6,7 @@ import com.study.coupon.coupon.domain.Coupon;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CouponConverter implements EntityConverter<CouponEntity, Coupon> {
+class CouponConverter implements EntityConverter<CouponEntity, Coupon> {
 
     @Override
     public Coupon entityToDomain(CouponEntity entity) {
