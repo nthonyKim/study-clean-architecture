@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 import java.util.UUID;
 
 @Setter
@@ -30,5 +31,15 @@ public class Coupon {
         coupon.setCreatedAt(Instant.now().getEpochSecond());
         coupon.setExpiredAt(Instant.now().plus(5, ChronoUnit.YEARS).getEpochSecond());
         return coupon;
+    }
+
+    public boolean useAvailable() {
+        return CouponStatus.READY.equals(status);
+    }
+
+    public void registered() {
+        this.status = CouponStatus.PROGRESS;
+        this.usedAt = Instant.now().getEpochSecond();
+        // 이벤트 발행
     }
 }
