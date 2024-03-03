@@ -1,5 +1,9 @@
 package com.study.coupon.user.domain;
 
-public class User {
+import com.study.coupon.common.domain.BaseModel;
+import lombok.Getter;
+
+@Getter
+public class User extends BaseModel {
     private Long id;
 }

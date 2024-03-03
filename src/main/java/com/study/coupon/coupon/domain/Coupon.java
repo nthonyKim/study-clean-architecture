@@ -1,5 +1,6 @@
 package com.study.coupon.coupon.domain;
 
+import com.study.coupon.common.domain.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,7 +10,7 @@ import java.util.UUID;
 
 @Setter
 @Getter
-public class Coupon {
+public class Coupon extends BaseModel {
     private Long id;
     private String code;
     private Long point;
@@ -35,9 +36,11 @@ public class Coupon {
     }
 
     public void registered() {
+        if (useAvailable()) {
+            throw new IllegalStateException("Coupon already used");
+        }
         this.status = CouponStatus.USED;
         this.usedAt = Instant.now().getEpochSecond();
-        // 이벤트 발행
     }
 
     public void expired() {
