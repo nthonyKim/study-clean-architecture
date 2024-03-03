@@ -1,7 +1,7 @@
 package com.study.coupon.coupon.application.port.in.command;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.study.coupon.coupon.CouponType;
+import com.study.coupon.coupon.domain.CouponType;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;

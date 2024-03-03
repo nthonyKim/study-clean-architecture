@@ -1,4 +1,4 @@
-package com.study.coupon.coupon;
+package com.study.coupon.coupon.domain;
 
 public enum CouponType {
     POINT,

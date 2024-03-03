@@ -1,6 +1,6 @@
 package com.study.coupon.coupon.adapter.out.persistence;
 
-import com.study.coupon.coupon.CouponStatus;
+import com.study.coupon.coupon.domain.CouponStatus;
 import jakarta.persistence.LockModeType;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

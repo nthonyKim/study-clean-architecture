@@ -1,6 +1,6 @@
 package com.study.coupon.coupon.adapter.out.persistence;
 
-import com.study.coupon.coupon.CouponStatus;
+import com.study.coupon.coupon.domain.CouponStatus;
 import com.study.coupon.coupon.application.port.out.LoadCouponPort;
 import com.study.coupon.coupon.application.port.out.UpdateCouponPort;
 import com.study.coupon.coupon.application.service.CouponConverter;

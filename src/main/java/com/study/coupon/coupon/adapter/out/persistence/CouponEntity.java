@@ -1,8 +1,8 @@
 package com.study.coupon.coupon.adapter.out.persistence;
 
 
-import com.study.coupon.coupon.CouponStatus;
-import com.study.coupon.coupon.CouponType;
+import com.study.coupon.coupon.domain.CouponStatus;
+import com.study.coupon.coupon.domain.CouponType;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

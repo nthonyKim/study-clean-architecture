@@ -1,13 +1,10 @@
 package com.study.coupon.coupon.domain;
 
-import com.study.coupon.coupon.CouponStatus;
-import com.study.coupon.coupon.CouponType;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.List;
 import java.util.UUID;
 
 @Setter
