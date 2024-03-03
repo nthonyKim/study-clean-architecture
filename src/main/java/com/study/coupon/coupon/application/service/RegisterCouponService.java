@@ -1,7 +1,7 @@
 package com.study.coupon.coupon.application.service;
 
-import com.study.coupon.coupon.adapter.out.persistence.CouponEntity;
-import com.study.coupon.coupon.adapter.out.persistence.CouponRepository;
+import com.study.coupon.coupon.application.port.out.LoadCouponPort;
+import com.study.coupon.coupon.application.port.out.UpdateCouponPort;
 import com.study.coupon.coupon.domain.Coupon;
 import com.study.coupon.coupon.application.port.in.RegisterCouponUseCase;
 import com.study.coupon.coupon.application.port.in.command.RegisterCouponCommand;
@@ -12,17 +12,16 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 class RegisterCouponService implements RegisterCouponUseCase {
 
-    private final CouponRepository couponRepository;
-    private final CouponConverter couponConverter;
+    private final UpdateCouponPort updateCouponPort;
+    private final LoadCouponPort loadCouponPort;
 
     @Override
     public void register(RegisterCouponCommand command) {
-        CouponEntity entity = couponRepository.findFirstByCode(command.getCode()).orElseThrow(() -> new RuntimeException("쿠폰이 존재하지 않음 (커스텀 예외 클래스 필요)"));
-        Coupon coupon = couponConverter.entityToDomain(entity);
+        Coupon coupon = loadCouponPort.byCode(command.getCode()).orElseThrow(() -> new RuntimeException("쿠폰이 존재하지 않음 (커스텀 예외 클래스 필요)"));
         validate(coupon);
 
         coupon.registered();
-        couponRepository.save(couponConverter.domainToEntity(coupon));
+        updateCouponPort.save(coupon);
     }
 
     @Override
@@ -31,6 +30,4 @@ class RegisterCouponService implements RegisterCouponUseCase {
             // TODO throw
         }
     }
-
-
 }

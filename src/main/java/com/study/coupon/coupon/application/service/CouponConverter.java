@@ -6,12 +6,12 @@ import com.study.coupon.coupon.domain.Coupon;
 import org.springframework.stereotype.Component;
 
 @Component
-class CouponConverter implements EntityConverter<CouponEntity, Coupon> {
+public class CouponConverter implements EntityConverter<CouponEntity, Coupon> {
 
     @Override
     public Coupon entityToDomain(CouponEntity entity) {
         if (entity == null) {
-            // TODO throw
+            return null;
         }
 
         Coupon coupon = new Coupon();
@@ -29,7 +29,7 @@ class CouponConverter implements EntityConverter<CouponEntity, Coupon> {
     @Override
     public CouponEntity domainToEntity(Coupon coupon) {
         if (coupon == null) {
-            // TODO throw
+            return null;
         }
 
         CouponEntity entity = new CouponEntity();
