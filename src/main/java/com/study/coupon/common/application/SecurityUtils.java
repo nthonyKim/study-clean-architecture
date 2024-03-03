@@ -21,6 +21,12 @@ public class SecurityUtils {
             return (Optional<User>) principal;
         }
 
-        throw new IllegalStateException("not exists User");
+        return Optional.empty();
+    }
+
+    public static Long getCurrentUserId() {
+        return getCurrentUser()
+                .map(User::getId)
+                .orElseThrow(() -> new IllegalStateException("user is not exists"));
     }
 }
