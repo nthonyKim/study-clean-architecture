@@ -1,6 +1,7 @@
 package com.study.coupon.coupon.domain;
 
 import com.study.coupon.common.domain.BaseModel;
+import com.study.coupon.coupon.domain.event.CouponEvent;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -45,5 +46,6 @@ public class Coupon extends BaseModel {
 
     public void expired() {
         this.status = CouponStatus.EXPIRED;
+        registerEvent(new CouponEvent.Expired(this));
     }
 }
