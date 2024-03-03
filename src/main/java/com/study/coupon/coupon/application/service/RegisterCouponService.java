@@ -1,6 +1,6 @@
 package com.study.coupon.coupon.application.service;
 
-import com.study.coupon.common.application.SecurityUtils;
+import com.study.coupon.common.SecurityUtils;
 import com.study.coupon.coupon.application.port.out.LoadCouponPort;
 import com.study.coupon.coupon.application.port.out.UpdateCouponPort;
 import com.study.coupon.coupon.domain.Coupon;
@@ -23,7 +23,7 @@ class RegisterCouponService implements RegisterCouponUseCase {
     @Override
     @Transactional
     public void register(RegisterCouponCommand command) {
-        Coupon coupon = loadCouponPort.byCode(command.getCode()).orElseThrow(() -> new RuntimeException("쿠폰이 존재하지 않음 (커스텀 예외 클래스 필요)"));
+        Coupon coupon = loadCouponPort.byCode(command.getCode()).orElseThrow(() -> new RuntimeException("사용할 수 없는 쿠폰입니다."));
         validate(coupon);
 
         coupon.registered();
@@ -44,7 +44,7 @@ class RegisterCouponService implements RegisterCouponUseCase {
     @Override
     public void validate(Coupon coupon) {
         if (!coupon.useAvailable()) {
-            // TODO throw
+            throw new RuntimeException("사용할 수 없는 쿠폰입니다.");
         }
     }
 }

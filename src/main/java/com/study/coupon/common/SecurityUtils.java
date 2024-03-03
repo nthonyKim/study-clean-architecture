@@ -1,4 +1,4 @@
-package com.study.coupon.common.application;
+package com.study.coupon.common;
 
 
 import com.study.coupon.user.domain.User;
